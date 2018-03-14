@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import { get, set } from './utils'
 
 function accessor(key) {
@@ -56,7 +55,7 @@ export default class Bus {
     this.vm = null
   }
 
-  _createVm() {
+  _createVm(Vue) {
     const state = this.options.state ? this.options.state : this.options
     this.modules.forEach(module => state[module.name] = module.state)
     const vm = new Vue({ data: () => state, computed: this.options.getters })
@@ -79,7 +78,7 @@ export default class Bus {
 
   install(Vue) {
     const bus = this
-    this.vm = this._createVm()
+    this.vm = this._createVm(Vue)
 
     const merge = (to = [], from) => {
       const uniq = arr => [ ...new Set(arr) ]
