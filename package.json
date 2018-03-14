@@ -4,8 +4,7 @@
   "description": "Simple state management for vue application.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c",
-    "precommit": "npm run build && git add ."
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,6 @@
   },
   "homepage": "https://github.com/ucfan/vue-bus-driver#readme",
   "devDependencies": {
-    "husky": "^0.14.3",
     "rollup": "^0.56.5",
     "rollup-plugin-buble": "^0.19.2",
     "rollup-plugin-node-resolve": "^3.2.0"

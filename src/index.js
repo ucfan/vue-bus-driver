@@ -1,4 +1,4 @@
-import { get, set } from './utils'
+import { get, set, uniq } from './utils'
 
 function accessor(key) {
   return {
@@ -81,7 +81,6 @@ export default class Bus {
     this.vm = this._createVm(Vue)
 
     const merge = (to = [], from) => {
-      const uniq = arr => [ ...new Set(arr) ]
       const option = uniq(to.concat(from)).filter(x => x)
       return (option.length > 0) ? option : undefined
     }

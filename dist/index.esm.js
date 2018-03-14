@@ -1,9 +1,3 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.VueBusDriver = factory());
-}(this, (function () { 'use strict';
-
 var get = require('lodash/get');
 var set = require('lodash/set');
 var uniq = require('lodash/uniq');
@@ -144,6 +138,4 @@ Bus.prototype.routerSync = function routerSync (router, stateName) {
   }, { deep: true, sync: true });
 };
 
-return Bus;
-
-})));
+export default Bus;
